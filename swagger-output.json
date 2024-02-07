@@ -144,36 +144,6 @@
             "in": "path",
             "required": true,
             "type": "string"
-          },
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "bugTitle": {
-                  "example": "any"
-                },
-                "dateDiscovered": {
-                  "example": "any"
-                },
-                "environment": {
-                  "example": "any"
-                },
-                "stepsToReproduce": {
-                  "example": "any"
-                },
-                "expectedResult": {
-                  "example": "any"
-                },
-                "actualResult": {
-                  "example": "any"
-                },
-                "severity": {
-                  "example": "any"
-                }
-              }
-            }
           }
         ],
         "responses": {
