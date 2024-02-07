@@ -8,7 +8,7 @@ app.use(express.json())
    .use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     next();
-});
+})
 
 mongodb.initDb((err) => {
     if (err) {

@@ -1,0 +1,92 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Bug Tracker API",
+    "description": "A simple API used to perform CRUD operations on a MongoDB database containing bug reports",
+    "version": "1.0.0"
+  },
+  "host": "bugtracker-hag1.onrender.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/bugs/": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "post": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "bugTitle": {
+                  "example": "any"
+                },
+                "dateDiscovered": {
+                  "example": "any"
+                },
+                "environment": {
+                  "example": "any"
+                },
+                "stepsToReproduce": {
+                  "example": "any"
+                },
+                "expectedResult": {
+                  "example": "any"
+                },
+                "actualResult": {
+                  "example": "any"
+                },
+                "severity": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/bugs/{id}": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
