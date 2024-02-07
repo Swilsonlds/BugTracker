@@ -9,4 +9,8 @@ router.get('/:id', bugsController.getSingle);
 
 router.post('/', bugsController.createBug);
 
+router.put('/:id', bugsController.updateBug);
+
+router.delete('/:id', bugsController.updateBug)
+
 module.exports = router;

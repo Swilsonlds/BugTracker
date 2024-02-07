@@ -8,7 +8,7 @@
   "host": "bugtracker-hag1.onrender.com",
   "basePath": "/",
   "schemes": [
-    "https"
+    "http"
   ],
   "paths": {
     "/bugs/": {
@@ -84,6 +84,104 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      },
+      "put": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "bugTitle": {
+                  "example": "any"
+                },
+                "dateDiscovered": {
+                  "example": "any"
+                },
+                "environment": {
+                  "example": "any"
+                },
+                "stepsToReproduce": {
+                  "example": "any"
+                },
+                "expectedResult": {
+                  "example": "any"
+                },
+                "actualResult": {
+                  "example": "any"
+                },
+                "severity": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "bugTitle": {
+                  "example": "any"
+                },
+                "dateDiscovered": {
+                  "example": "any"
+                },
+                "environment": {
+                  "example": "any"
+                },
+                "stepsToReproduce": {
+                  "example": "any"
+                },
+                "expectedResult": {
+                  "example": "any"
+                },
+                "actualResult": {
+                  "example": "any"
+                },
+                "severity": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       }
