@@ -1,0 +1,22 @@
+
+// Local get all bugs
+GET http://localhost:3000/bugs HTTP/1.1
+
+###
+// Local get bug by ID
+GET http://localhost:3000/bugs/65c2f3090059ac7fefc7afcf HTTP/1.1
+
+###
+// Local add bug
+POST http://localhost:3000/bugs HTTP/1.1
+content-Type: application/json
+
+{
+    "bugTitle": "Favicon not appearing",
+    "dateDiscovered": "2/6/2024",
+    "environment": "firefox",
+    "stepsToReproduce": "navigate to site URL in firefox",
+    "expectedResult": "favicon should be display",
+    "actualResult": "favicon isn't displayed",
+    "severity": "low"
+}

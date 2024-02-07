@@ -1,0 +1,9 @@
+{
+    "bugTitle": "Favicon not appearing",
+    "dateDiscovered": "2/6/2024",
+    "environment": "firefox",
+    "stepsToReproduce": "navigate to site URL in firefox",
+    "expectedResult": "favicon should be display",
+    "actualResult": "favicon isn't displayed",
+    "severity": "low"
+}
