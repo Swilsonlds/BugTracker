@@ -1,18 +1,21 @@
+///////////////////// LOCAL /////////////////////
+
+
 
 // Local get all bugs
-GET http://localhost:3000/bugs HTTP/1.1
+GET https://localhost:3000/bugs HTTP/1.1
 
 ###
 // Local get bug by ID
-GET http://localhost:3000/bugs/65c2f3090059ac7fefc7afcf HTTP/1.1
+GET https://localhost:3000/bugs/65c2f3090059ac7fefc7afcf HTTP/1.1
 
 ###
-// Local add bug
-POST http://localhost:3000/bugs HTTP/1.1
+// Local add bug report
+POST https://localhost:3000/bugs HTTP/1.1
 content-Type: application/json
 
 {
-    "bugTitle": "Favicon not appearing",
+    "bugTitle": "Favicon not appearingggggggg",
     "dateDiscovered": "2/6/2024",
     "environment": "firefox",
     "stepsToReproduce": "navigate to site URL in firefox",
@@ -20,3 +23,72 @@ content-Type: application/json
     "actualResult": "favicon isn't displayed",
     "severity": "low"
 }
+
+###
+// Local update bug report
+PUT https://localhost:3000/bugs/65c324f312f14f41a5110db9 HTTP/1.1
+content-Type: application/json
+
+{
+  "bugTitle": "any",
+  "dateDiscovered": "any",
+  "environment": "any",
+  "stepsToReproduce": "any",
+  "expectedResult": "any",
+  "actualResult": "any",
+  "severity": "any"
+}
+
+###
+// Local delete bug report
+DELETE https://localhost:3000/bugs/65c324f312f14f41a5110db9 HTTP/1.1
+
+
+
+###
+///////////////////// RENDER /////////////////////
+###
+
+
+
+// Render get all bugs
+GET https://bugtracker-hag1.onrender.com/bugs HTTP/1.1
+
+###
+// Render get bug by ID
+GET https://bugtracker-hag1.onrender.com/bugs/65c2f3090059ac7fefc7afcf HTTP/1.1
+
+###
+// Render add bug report
+POST https://bugtracker-hag1.onrender.com/bugs HTTP/1.1
+content-Type: application/json
+
+{
+    "bugTitle": "Favicon not appearingggggggg",
+    "dateDiscovered": "2/6/2024",
+    "environment": "firefox",
+    "stepsToReproduce": "navigate to site URL in firefox",
+    "expectedResult": "favicon should be display",
+    "actualResult": "favicon isn't displayed",
+    "severity": "low"
+}
+
+###
+// Render update bug report
+PUT https://bugtracker-hag1.onrender.com/bugs/65c324f312f14f41a5110db9 HTTP/1.1
+content-Type: application/json
+
+{
+  "bugTitle": "any",
+  "dateDiscovered": "any",
+  "environment": "any",
+  "stepsToReproduce": "any",
+  "expectedResult": "any",
+  "actualResult": "any",
+  "severity": "any"
+}
+
+###
+// Render delete bug report
+DELETE https://bugtracker-hag1.onrender.com/bugs/65c324f312f14f41a5110db9 HTTP/1.1
+
