@@ -11,6 +11,6 @@ router.post('/', bugsController.createBug);
 
 router.put('/:id', bugsController.updateBug);
 
-router.delete('/:id', bugsController.updateBug)
+router.delete('/:id', bugsController.deleteBug)
 
 module.exports = router;
