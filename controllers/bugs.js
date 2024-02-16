@@ -17,6 +17,9 @@ const getAll = (req, res) => {
     };
   
 const getSingle = (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Must use a valid contact id to find a bug report.');
+  }
   const bugId = new ObjectId(req.params.id);
   mongodb
     .getDb()
@@ -52,6 +55,9 @@ const createBug = async (req, res) => {
   };
 
 const updateBug = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Must use a valid contact id to find a bug report.');
+  }
   const bugId = new ObjectId(req.params.id);
   const bug = {
     bugTitle: req.body.bugTitle,
@@ -76,6 +82,9 @@ const updateBug = async (req, res) => {
 };
 
 const deleteBug = async (req, res) => {
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json('Must use a valid contact id to find a bug report.');
+  }
   const bugId = new ObjectId(req.params.id);
   const response = await mongodb.getDb().db().collection('bugs').deleteOne({ _id: bugId }, true);
   console.log(response);

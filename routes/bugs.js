@@ -2,14 +2,15 @@ const express = require('express');
 const router = express.Router();
 
 const bugsController = require('../controllers/bugs');
+const validation = require('../middleware/validate');
 
 router.get('/', bugsController.getAll);
 
 router.get('/:id', bugsController.getSingle);
 
-router.post('/', bugsController.createBug);
+router.post('/', validation.saveBugReport, bugsController.createBug);
 
-router.put('/:id', bugsController.updateBug);
+router.put('/:id', validation.saveBugReport, bugsController.updateBug);
 
 router.delete('/:id', bugsController.deleteBug)
 
