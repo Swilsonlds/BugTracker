@@ -9,16 +9,16 @@ const getAll = (req, res) => {
       .find()
       .toArray((err, lists) => {
         if (err) {
-          res.status(400).json({ message: err});
+          return res.status(400).json({ message: err});
         }
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(lists);
       });
 };
-  
+ 
 const getSingle = (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
-    res.status(400).json('Must use a valid contact id to find a bug report.');
+    res.status(400).json('Must use a valid bug report id to find a bug report.');
   }
   const bugId = new ObjectId(req.params.id);
   mongodb
@@ -56,7 +56,7 @@ const createBug = async (req, res) => {
 
 const updateBug = async (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
-    res.status(400).json('Must use a valid contact id to find a bug report.');
+    res.status(400).json('Must use a valid bug report id to find a bug report.');
   }
   const bugId = new ObjectId(req.params.id);
   const bug = {
