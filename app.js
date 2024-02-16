@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const PORT = 3000;
 const mongodb = require('./db/connect');
+const bodyParser = require('body-parser');
 
 app.use(express.json())
    .use(bodyParser.json())
