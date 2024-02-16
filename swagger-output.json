@@ -33,25 +33,25 @@
               "type": "object",
               "properties": {
                 "bugTitle": {
-                  "example": "any"
+                  "example": ""
                 },
                 "dateDiscovered": {
-                  "example": "any"
+                  "example": ""
                 },
                 "environment": {
-                  "example": "any"
+                  "example": ""
                 },
                 "stepsToReproduce": {
-                  "example": "any"
+                  "example": ""
                 },
                 "expectedResult": {
-                  "example": "any"
+                  "example": ""
                 },
                 "actualResult": {
-                  "example": "any"
+                  "example": ""
                 },
                 "severity": {
-                  "example": "any"
+                  "example": ""
                 }
               }
             }
@@ -103,25 +103,25 @@
               "type": "object",
               "properties": {
                 "bugTitle": {
-                  "example": "any"
+                  "example": ""
                 },
                 "dateDiscovered": {
-                  "example": "any"
+                  "example": ""
                 },
                 "environment": {
-                  "example": "any"
+                  "example": ""
                 },
                 "stepsToReproduce": {
-                  "example": "any"
+                  "example": ""
                 },
                 "expectedResult": {
-                  "example": "any"
+                  "example": ""
                 },
                 "actualResult": {
-                  "example": "any"
+                  "example": ""
                 },
                 "severity": {
-                  "example": "any"
+                  "example": ""
                 }
               }
             }
