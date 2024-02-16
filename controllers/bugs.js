@@ -14,7 +14,7 @@ const getAll = (req, res) => {
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(lists);
       });
-    };
+};
   
 const getSingle = (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
@@ -33,7 +33,7 @@ const getSingle = (req, res) => {
       res.setHeader('Content-Type', 'application/json');
       res.status(200).json(result[0]);
     })
-  };
+};
 
 const createBug = async (req, res) => {
     const bug = {
@@ -52,7 +52,7 @@ const createBug = async (req, res) => {
     } else {
       res.status(500).json(response.error || 'Some error occurred while creating the contact.');
     }
-  };
+};
 
 const updateBug = async (req, res) => {
   if (!ObjectId.isValid(req.params.id)) {
