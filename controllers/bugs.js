@@ -17,23 +17,24 @@ const getAll = async (req, res) => {
   }
 };
  
-const getSingle = (req, res) => {
-  if (!ObjectId.isValid(req.params.id)) {
-    res.status(400).json('Must use a valid bug report id to find a bug report.');
+const getSingle = async (req, res) => {
+  try {
+    if (!ObjectId.isValid(req.params.id)) {
+      return res.status(400).json('Must use a valid bug report id to find a bug report.');
+    }
+    const bugId = new ObjectId(req.params.id);
+    const lists = await mongodb
+      .getDb()
+      .db()
+      .collection('bugs')
+      .find({ _id: bugId})
+      .toArray();
+      
+    res.setHeader('Content-Type', 'application/json');
+    res.status(200).json(lists[0]);
+  } catch (err) {
+    res.status(400).json({ message: err });
   }
-  const bugId = new ObjectId(req.params.id);
-  mongodb
-    .getDb()
-    .db()
-    .collection('bugs')
-    .find({ _id: bugId})
-    .toArray((err, lists) => {
-      if (err) {
-        res.status(400).json({ message: err});
-      }
-      res.setHeader('Content-Type', 'application/json');
-      res.status(200).json(result[0]);
-    })
 };
 
 const createBug = async (req, res) => {
