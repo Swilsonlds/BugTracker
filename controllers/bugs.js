@@ -13,7 +13,7 @@ const getAll = (req, res) => {
         }
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(lists);
-      })
+      });
     };
   
 const getSingle = (req, res) => {
