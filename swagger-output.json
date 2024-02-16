@@ -33,25 +33,25 @@
               "type": "object",
               "properties": {
                 "bugTitle": {
-                  "example": ""
+                  "example": "any"
                 },
                 "dateDiscovered": {
-                  "example": ""
+                  "example": "Must be a date in the following format: MM/DD/YYYY"
                 },
                 "environment": {
-                  "example": ""
+                  "example": "any"
                 },
                 "stepsToReproduce": {
-                  "example": ""
+                  "example": "any"
                 },
                 "expectedResult": {
-                  "example": ""
+                  "example": "any"
                 },
                 "actualResult": {
-                  "example": ""
+                  "example": "any"
                 },
                 "severity": {
-                  "example": ""
+                  "example": "any"
                 }
               }
             }
@@ -103,25 +103,25 @@
               "type": "object",
               "properties": {
                 "bugTitle": {
-                  "example": ""
+                  "example": "any"
                 },
                 "dateDiscovered": {
-                  "example": ""
+                  "example": "Must be a date in the following format: MM/DD/YYYY"
                 },
                 "environment": {
-                  "example": ""
+                  "example": "any"
                 },
                 "stepsToReproduce": {
-                  "example": ""
+                  "example": "any"
                 },
                 "expectedResult": {
-                  "example": ""
+                  "example": "any"
                 },
                 "actualResult": {
-                  "example": ""
+                  "example": "any"
                 },
                 "severity": {
-                  "example": ""
+                  "example": "any"
                 }
               }
             }
