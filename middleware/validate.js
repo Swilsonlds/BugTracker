@@ -10,6 +10,7 @@ const saveBugReport = (req, res, next) => {
     actualResult: 'required|string',
     severity: 'required|string'
   };
+  
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {
       res.status(412).send({
