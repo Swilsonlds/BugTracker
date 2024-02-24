@@ -3,6 +3,7 @@ const app = express();
 const PORT = 3000;
 const mongodb = require('./db/connect');
 const bodyParser = require('body-parser');
+require('./controllers/auth');
 
 app.use(express.json())
    .use(bodyParser.json())

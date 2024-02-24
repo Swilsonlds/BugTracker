@@ -1,4 +1,5 @@
-var GoogleStrategy = require('passport-google-oauth20').Strategy;
+const passport = require('passport')
+const GoogleStrategy = require('passport-google-oauth2').Strategy;
 
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
@@ -6,6 +7,14 @@ passport.use(new GoogleStrategy({
     callbackURL: "http://localhost:3000/auth"
   },
   function(accessToken, refreshToken, profile, done) {
-      return done(err, user);
+      return done(err, profile);
   }
 ));
+
+passport.serializeUser(function(user, done)  {
+    done(null, user);
+})
+
+passport.deserializeUser(function(user, done)  {
+    done(null, user);
+})
