@@ -28,7 +28,8 @@ router.get('/protected', auth.isLoggedIn, (req, res) => {
 
 router.get('/logout', (req, res) => {
     req.logOut();
-    res.send("Goodbye!")
+    req.session.destroy();
+    res.redirect("/")
 })
 
 module.exports = router;

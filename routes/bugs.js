@@ -9,10 +9,10 @@ router.get('/', bugsController.getAll);
 
 router.get('/:id', bugsController.getSingle);
 
-router.post('/', validation.saveBugReport, bugsController.createBug);
+router.post('/', auth.isLoggedIn, validation.saveBugReport, bugsController.createBug);
 
-router.put('/:id', validation.saveBugReport, bugsController.updateBug);
+router.put('/:id', auth.isLoggedIn, validation.saveBugReport, bugsController.updateBug);
 
-router.delete('/:id', bugsController.deleteBug)
+router.delete('/:id', auth.isLoggedIn, bugsController.deleteBug)
 
 module.exports = router;

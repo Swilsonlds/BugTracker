@@ -13,13 +13,13 @@ const swaggerDocument = require('../swagger-output.json');
 // });
 
 router.get('/', (req, res) => {
-    res.send('<a href="/auth/google">Login with Google</a>')
+    res.send('<a href="/auth/google">Login with Google</a><br><br>Logging in will allow you to modify the database.<br><br>If you want to view the documentation without being able to modify the database, click <a href="../api-docs">here</a>')
 })
 
 router.use('/bugs', require('./bugs'));
 router.use('/auth', require('./auth'));
 
-router.use('/api-docs',auth.isLoggedIn, swaggerUi.serve);
+router.use('/api-docs', swaggerUi.serve);
 router.get('/api-docs', swaggerUi.setup(swaggerDocument));
 
 module.exports = router;
