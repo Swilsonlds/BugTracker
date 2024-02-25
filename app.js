@@ -19,10 +19,10 @@ app.use(express.json())
    .use(bodyParser.json())
    .use('/', require('./routes'))
    .use(cors())
-//    .use((req, res, next) => {
-//     res.setHeader('Access-Control-Allow-Origin', '*');
-//     next();
-// })
+   .use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    next();
+})
 
 process.on('uncaughtException', (err, origin) => {
   console.log(process.stderr.fd, `Caught exception ${err}\n` + `Exception origin: ${origin}`);
