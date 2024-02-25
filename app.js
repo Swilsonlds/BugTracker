@@ -20,7 +20,7 @@ app.use(express.json())
    .use('/', require('./routes'))
    .use(cors())
    .use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Origin', '*')
     next();
 })
 
