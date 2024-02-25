@@ -1,8 +1,18 @@
 const express = require('express');
+const session = require("express-session");
+const passport = require('passport')
+
 const app = express();
+
+app.use(session({ secret: "dfljasldkjfoij5234tjofdo"}))
+app.use(passport.initialize());
+app.use(passport.session());
+
 const PORT = 3000;
 const mongodb = require('./db/connect');
 const bodyParser = require('body-parser');
+
+require('./auth/auth');
 
 app.use(express.json())
    .use(bodyParser.json())

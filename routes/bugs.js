@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const bugsController = require('../controllers/bugs');
+const auth = require('../helpers/auth');
 const validation = require('../middleware/validate');
 
 router.get('/', bugsController.getAll);
