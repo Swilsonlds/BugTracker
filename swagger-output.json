@@ -8,7 +8,7 @@
   "host": "bugtracker-hag1.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http"
+    "https"
   ],
   "paths": {
     "/bugs/": {
