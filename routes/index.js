@@ -17,6 +17,7 @@ router.get('/', (req, res) => {
 })
 
 router.use('/bugs', require('./bugs'));
+router.use('/users', require('./users'));
 router.use('/auth', require('./auth'));
 
 router.use('/api-docs', swaggerUi.serve);
