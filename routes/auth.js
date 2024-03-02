@@ -32,7 +32,7 @@ router.get('/logout', (req, res) => {
         console.error('Error destroying session:', err);
         res.status(500).send('Internal Server Error');
       } else {
-        res.redirect('/login'); // Redirect to login page or any other page
+        res.redirect('/'); // Redirect to login page or any other page
       }
     });
 });
