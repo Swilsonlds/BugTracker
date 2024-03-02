@@ -23,7 +23,7 @@ router.get('/failure', (req, res) => {
 })
 
 router.get('/protected', auth.isLoggedIn, (req, res) => {
-    res.send(`Hello ${req.user.displayName}, You've been successfully logged in.<br><br>You may now add, update, and delete bug reports!<br><br>Click <a href="../api-docs">here</a> to view the API docs`);
+    res.send(`Hello ${req.user.displayName}, You've been successfully logged in. Navigate to the "/auth/logout" endpoint to logout.<br><br>You may now add, update, and delete bug reports!<br><br>Click <a href="../api-docs">here</a> to view the API docs`);
 })
 
 router.get('/logout', (req, res) => {
