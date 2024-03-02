@@ -27,7 +27,7 @@ const saveBugReport = (req, res, next) => {
 const saveUser = (req, res, next) => {
   const validationRule = {
     firstName: 'required|string',
-    lastName: 'required|date',
+    lastName: 'required|string',
     employeeID: 'required|string'
   };
   
