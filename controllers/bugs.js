@@ -5,7 +5,7 @@ const getAll = async (req, res) => {
   try {
       const lists = await mongodb
           .getDb()
-          .db()
+          .db('BugTracker')
           .collection('bugs')
           .find()
           .toArray();
@@ -25,7 +25,7 @@ const getSingle = async (req, res) => {
     const bugId = new ObjectId(req.params.id);
     const lists = await mongodb
       .getDb()
-      .db()
+      .db('BugTracker')
       .collection('bugs')
       .find({ _id: bugId})
       .toArray();
@@ -48,7 +48,7 @@ const createBug = async (req, res) => {
       severity: req.body.severity
     };
 
-    const response = await mongodb.getDb().db().collection('bugs').insertOne(bug);
+    const response = await mongodb.getDb().db('BugTracker').collection('bugs').insertOne(bug);
     if (response.acknowledged) {
       res.status(201).json(response);
     } else {
@@ -72,7 +72,7 @@ const updateBug = async (req, res) => {
   };
   const response = await mongodb
     .getDb()
-    .db()
+    .db('BugTracker')
     .collection('bugs')
     .replaceOne({ _id: bugId }, bug);
   console.log(response);
@@ -88,7 +88,7 @@ const deleteBug = async (req, res) => {
     res.status(400).json('Must use a valid contact id to find a bug report.');
   }
   const bugId = new ObjectId(req.params.id);
-  const response = await mongodb.getDb().db().collection('bugs').deleteOne({ _id: bugId }, true);
+  const response = await mongodb.getDb().db('BugTracker').collection('bugs').deleteOne({ _id: bugId }, true);
   console.log(response);
   if (response.deletedCount > 0) {
     res.status(200).send();
