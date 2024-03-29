@@ -1,7 +1,7 @@
 const mongodb = require('../db/connect');
 const ObjectId = require('mongodb').ObjectId;
-const getAll = async (req, res) => {
 
+const getAll = async (req, res) => {
     try {
         const lists = await mongodb
             .getDb()
