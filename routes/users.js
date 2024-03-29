@@ -9,10 +9,10 @@ router.get('/', usersController.getAll);
 
 router.get('/:id', usersController.getSingle);
 
-router.post('/', auth.isLoggedIn, validation.saveUser, usersController.createUser);
+router.post('/', validation.saveUser, usersController.createUser);
 
-router.put('/:id', auth.isLoggedIn, validation.saveUser, usersController.updateUser);
+router.put('/:id', validation.saveUser, usersController.updateUser);
 
-router.delete('/:id', auth.isLoggedIn, usersController.deleteUser)
+router.delete('/:id', usersController.deleteUser)
 
 module.exports = router;
