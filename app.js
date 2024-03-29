@@ -1,7 +1,7 @@
 const express = require('express');
 const session = require("express-session");
 const cors = require('cors');
-const passport = require('passport')
+const passport = require('passport');
 
 const app = express();
 
@@ -15,10 +15,10 @@ const bodyParser = require('body-parser');
 
 require('./auth/auth');
 
-app.use(express.json())
+app.use(cors())
+   .use(express.json())
    .use(bodyParser.json())
    .use('/', require('./routes'))
-   .use(cors())
 
 process.on('uncaughtException', (err, origin) => {
   console.log(process.stderr.fd, `Caught exception ${err}\n` + `Exception origin: ${origin}`);
